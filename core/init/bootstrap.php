@@ -14,6 +14,17 @@ const VND = ROOT . 'vendor' . DS;
 
 $g = glob(CONF . "*.config.php");
 
+require_once INIT . 'Config.core.php';
+
+$config = Config::loadEnv(ROOT . '.env');
+
+
 foreach($g as $f) {
     require_once $f;
 }
+
+require_once VND . 'autoload.php';
+
+echo Config::get("Default Action") . "<br />";
+echo Config::get("Default Controller") . "<br />";
+echo Config::get("Db Host") . "<br />";
