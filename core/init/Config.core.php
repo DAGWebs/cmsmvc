@@ -21,6 +21,7 @@ class Config {
     public static function set($key, $value) {
         $key = str_replace("_", ' ', $key);
         $key = str_replace("-", ' ', $key);
+        $key = str_replace(".", ' ', $key);
 
         $key = ucwords(strtolower($key));
 
@@ -28,6 +29,12 @@ class Config {
     }
 
     public static function get($key) {
+        $key = str_replace("_", ' ', $key);
+        $key = str_replace("-", ' ', $key);
+        $key = str_replace(".", ' ', $key);
+
+        $key = ucwords(strtolower($key));
+
         return self::$_config[$key];
     }
 }

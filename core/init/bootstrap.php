@@ -27,6 +27,8 @@ spl_autoload_register(function($class) {
         require_once  MOD . $class . DS . $class . '.mdoel.php';
     } else if(file_exists(CORE . $class . '.core.php')) {
         require_once CORE . $class . '.core.php';
+    } else if(file_exists(ROOT . 'modules' . DS . $class . '.module.php')) {
+        require_once ROOT . 'modules' . DS . $class . '.module.php';
     }
 });
 
@@ -36,6 +38,5 @@ foreach($g as $f) {
 
 require_once VND . 'autoload.php';
 
-echo Config::get("Default Action") . "<br />";
-echo Config::get("Default Controller") . "<br />";
-echo Config::get("Db Host") . "<br />";
+$router = new Router();
+$router->route();

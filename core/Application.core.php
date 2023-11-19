@@ -1,6 +1,6 @@
 <?php
 class Application {
-    public function _construct() {
+    public function __construct() {
         $this->_set_reporting();
         $this->_unregister_globals();
     }
