@@ -65,4 +65,10 @@ class Model {
             'bind' => [$id]
         ]);
     }
+
+    public function getColumns() {
+        return $this->_columnNames;
+    }
 }
+
+

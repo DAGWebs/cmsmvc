@@ -29,6 +29,8 @@ spl_autoload_register(function($class) {
         require_once CORE . $class . '.core.php';
     } else if(file_exists(ROOT . 'modules' . DS . $class . '.module.php')) {
         require_once ROOT . 'modules' . DS . $class . '.module.php';
+    } else if(file_exists(ROOT . 'components' . DS . $class . '.component.php')) {
+        require_once ROOT . 'components' . DS . $class . '.component.php';
     }
 });
 

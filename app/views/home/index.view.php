@@ -1,21 +1,50 @@
-<?php $this->start("body") ?>
-<h1>Hello from home page</h1>
-<?php $this->end() ?>
+<?php 
+
+$this->start("body");
 
 
-<?php
-$fields = [
-    'post_id' => 'INT AUTO_INCREMENT PRIMARY KEY',
-    'post_name' => 'VARCHAR(255) NOT NULL',
-    'post_description' => 'TEXT',
-    'post_date' => 'DATETIME',
-    'post_status' => 'VARCHAR(20)',
-    'post_views' => 'INT',
-    'post_image' => 'VARCHAR(255)',
-    'post_content' => 'TEXT',
-    'post_author' => 'VARCHAR(255)',
-    
-];
-$post = new Model('posts', $fields);
-var_dump($post->findByID('post_author', 1));
+$form = new Form('http://api.cms.test/user/login');
 
+$form->setFormAttributes([
+    'class' => 'container p-4 border rounded text-white bg-dark',
+    'style' => 'max-width: 400px; margin-top: 100px;'
+]);
+
+$header = new Component('div', ['class' => 'text-center'], 'Login To Your Account');
+$form->addGeneralComponent($header);
+
+$lableUsername = new Component('label', ['for' => 'username'], 'Username: ');
+$form->addCustomComponent('username', $lableUsername);
+
+$lablePassword = new Component('label', ['for' => 'password'], 'Password: ');
+$form->addCustomComponent('password', $lablePassword);
+
+
+$form->addInput('username', 'text', [
+    'id' => 'username',
+    'placeholder' => 'EnterUsername',
+    'class' => 'form-control mb-2',
+]);
+
+$form->addInput('Reset password', '', [
+    'href' => 'http://api.cms.test/reset',
+], 'link');
+
+$form->addInput('password', 'password', [
+    'id' => 'password',
+    'placeholder' => '**********',
+    'class' => 'form-control mb-2',
+]);
+
+
+
+$form->addInput('submit', 'submit', [
+    'value' => 'Login Now',
+    'class' => 'btn btn-primary w-100',
+]);
+
+$form->setFormGroupWrapping('submit', true);
+$form->setFormGroupWrapping('username', true);
+$form->setFormGroupWrapping('password', true);
+
+echo $form->render();
