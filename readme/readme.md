@@ -74,7 +74,7 @@ The `FormBuilder` class is responsible for generating HTML forms and handling fo
 - `addValidationRules($name, $attributes)`: Add validation rules for a form field.
 - `validate($data)`: Validate the form data based on the defined validation rules.
 
-[View a full documentation for this class!](https://github.com/DAGWebs/cmsmvc/blob/readme/forms.md)
+[View a full documentation for this class!](https://github.com/iamjonbradley/swelldag/blob/dagDevelopment/readme/forms.md)
 
 ## Model Class
 
@@ -88,7 +88,7 @@ The `Model` class provides a base class for interacting with database tables.
 - `update($id, $fields)`: Update data in the associated table.
 - `delete($id = '')`: Delete a record from the associated table.
 
-[View a full documentation for this class!](https://github.com/DAGWebs/cmsmvc/blob/readme/model.md)
+[View a full documentation for this class!](https://github.com/iamjonbradley/swelldag/blob/dagDevelopment/readme/model.md)
 
 ## DB Class
 
@@ -101,11 +101,11 @@ The `DB` class provides database interaction functionalities.
 - `insert($table, $fields)`: Insert data into a database table.
 - `update($table, $id, $fields)`: Update data in a database table.
 - `delete($table, $id)`: Delete a record from a database table.
-[View a full documentation for this class!](https://github.com/DAGWebs/cmsmvc/blob/readme/dbWrapper.md)
+[View a full documentation for this class!](https://github.com/iamjonbradley/swelldag/blob/dagDevelopment/readme/dbWrapper.md)
 ## Router Class
 
 The `Router` class handles routing and URL mapping. It automatically routes requests based on the controller and action names.
-[View a full documentation for this class!](https://github.com/DAGWebs/cmsmvc/blob/readme/routing.md)
+[View a full documentation for this class!](https://github.com/iamjonbradley/swelldag/blob/dagDevelopment/readme/routing.md)
 ## Security Class
 
 The `Security` class provides security-related functionality.
@@ -115,7 +115,7 @@ The `Security` class provides security-related functionality.
 - `sanitize($data)`: Sanitize input data.
 - `hashPassword($password)`: Hash a password.
 - `verifyPassword($password, $hash)`: Verify a password against a hash.
-[View a full documentation for this class!](https://github.com/DAGWebs/cmsmvc/blob/readme/security.md)
+[View a full documentation for this class!](https://github.com/iamjonbradley/swelldag/blob/dagDevelopment/readme/security.md)
 ## Email Class
 
 The `Email` class provides functionality for sending and managing emails. It includes methods to send emails, view and receive emails using IMAP functions, create and delete folders, and retrieve email details.
@@ -130,7 +130,7 @@ The `Email` class provides functionality for sending and managing emails. It inc
 - `bodyPreview($folder, $message)`: Get the body preview of a message.
 - `body($folder, $message)`: Get the full body of a message.
 - `createFolder($folder)`: Create a new email folder.
-[View a full documentation for this class!](https://github.com/DAGWebs/cmsmvc/blob/readme/Email.md)
+[View a full documentation for this class!](https://github.com/iamjonbradley/swelldag/blob/dagDevelopment/readme/Email.md)
 ## SendEmail Class
 
 The `SendEmail` class provides functionality for sending and managing email drafts. It includes methods to send emails and create email drafts.
@@ -139,7 +139,7 @@ The `SendEmail` class provides functionality for sending and managing email draf
 
 - `send($to, $subject, $message)`: Send an email.
 - `draft($to, $subject, $message)`: Create an email draft.
-[View a full documentation for this class!](https://github.com/DAGWebs/cmsmvc/blob/readme/sendingEmails.md)
+[View a full documentation for this class!](https://github.com/iamjonbradley/swelldag/blob/dagDevelopment/readme/sendingEmails.md)
 ## CPanelAPI Class
 
 The `CPanelAPI` class allows you to interact with a cPanel account. It provides methods for creating accounts, deleting domains, creating and managing domains, and using the cPanel API to manage your cPanel account.
@@ -152,7 +152,7 @@ The `CPanelAPI` class allows you to interact with a cPanel account. It provides 
 - `deleteAccount($username)`: Delete an existing account.
 - `createDomain($domain)`: Create a new domain.
 - `deleteDomain($domain)`: Delete a domain.
-[View a full documentation for this class!](https://github.com/DAGWebs/cmsmvc/blob/readme/CpanelAPI.md)
+[View a full documentation for this class!](https://github.com/iamjonbradley/swelldag/blob/dagDevelopment/readme/CpanelAPI.md)
 ## API Class
 
 The `API` class allows users to create GET, POST, UPDATE, and DELETE requests using corresponding methods. It provides a convenient interface for working with APIs.
@@ -163,7 +163,7 @@ The `API` class allows users to create GET, POST, UPDATE, and DELETE requests us
 - `post($url, $data = [])`: Perform a POST request.
 - `update($url, $data = [])`: Perform an UPDATE request.
 - `delete($url, $data = [])`: Perform a DELETE request.
-[View a full documentation for this class!](https://github.com/DAGWebs/cmsmvc/blob/readme/api.md)
+[View a full documentation for this class!](https://github.com/iamjonbradley/swelldag/blob/dagDevelopment/readme/api.md)
 ## Footer
 
 This concludes the SwellMVC documentation. You now have a comprehensive understanding of the classes and functionalities available in the framework. Should you have any further questions or need additional assistance, please refer to the SwellMVC community or support resources.

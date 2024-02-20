@@ -5,6 +5,11 @@ use PHPMailer\PHPMailer\Exception;
 class Email {
     private $_mail;
 
+    /**
+     * Constructor initializes PHPMailer with configuration settings from the Config class.
+     * It sets up the mailer to use SMTP with authentication and encryption as specified in the configuration.
+     */
+
     public function __construct() {
         $this->_mail = new PHPMailer(Config::get('email.debug'));
         $this->_mail->isSMTP();
@@ -15,7 +20,19 @@ class Email {
         $this->_mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $this->_mail->Port = 465;
     }
-
+    /**
+     * Sends an email to a specified recipient with optional CC, BCC, and attachments.
+     * Allows for both HTML and plain text content to be set for the email body.
+     *
+     * @param string|array $to Recipient's email address or an array of addresses.
+     * @param string $subject Subject of the email.
+     * @param string $message HTML or plain text message body.
+     * @param array $cc Array of CC'd email addresses.
+     * @param array $bcc Array of BCC'd email addresses.
+     * @param array $att Array of attachments.
+     * @param bool $useHTML Whether to send the email as HTML. Defaults to true.
+     * @return bool Returns true on success, or false on failure.
+     */
     public function send($to, $subject, $message, $cc = [], $bcc = [], $att = [], $useHTML = true) {
         $from = Config::get('email.from');
         $reply = Config::get('email.reply');
@@ -44,6 +61,12 @@ class Email {
         }
     }
 
+    /**
+     * Sets the "From" field of the email. Can handle both string and associative array inputs.
+     *
+     * @param string|array $from The sender's email address and optionally the name.
+     */
+
     private function setFromField($from) {
         if(is_array($from)){
             if(array_key_exists('address', $from) && array_key_exists('name', $from)){
@@ -65,6 +88,12 @@ class Email {
             $this->_mail->setFrom($from);
         }
     }
+
+    /**
+     * Adds one or more recipient addresses to the email. Handles both string and array inputs.
+     *
+     * @param string|array $to Recipient email address(es).
+     */
 
     private function setToField($from) {
         if(is_array($from)){
@@ -88,6 +117,12 @@ class Email {
         }
     }
 
+    /**
+     * Sets the "Reply-To" address of the email. Supports both string and associative array inputs.
+     *
+     * @param string|array $from Reply-To email address and optionally the name.
+     */
+
     private function setReplyField($from) {
         if(is_array($from)){
             if(array_key_exists('address', $from) && array_key_exists('name', $from)){
@@ -110,6 +145,12 @@ class Email {
         }
     }
 
+    /**
+     * Adds attachments to the email. Supports handling both file paths and names through array inputs.
+     *
+     * @param array $att Array of attachments where key can be the file path and value the name.
+     */
+
     private function setAttField($from) {
         if(is_array($from)){
             if(array_key_exists('address', $from) && array_key_exists('name', $from)){
@@ -131,6 +172,13 @@ class Email {
             $this->_mail->addAttachment($from);
         }
     }
+
+    /**
+     * General method for adding CC or BCC addresses to the email. Supports both string and array inputs.
+     *
+     * @param array|string $to Email address(es) to add.
+     * @param bool $cc If true, adds as CC. If false, adds as BCC. Defaults to false.
+     */
 
     private function setFields($to, $cc = false) {
         if($cc) {
