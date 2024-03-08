@@ -1,6 +1,6 @@
 ## Class: Model
 
-The `Model` class represents a basic model for interacting with a database table. It provides methods for performing common database operations such as inserting, updating, and deleting records. It also allows for custom SQL queries and provides utility methods for data manipulation.
+The `Model` class represents a basic model for interacting with a database table. It provides methods for performing common database operations such as inserting, updating, and deleting records. It also allows for custom SQL queries and provides utility methods for data manipulation. It is prefable to create another class that extends off of your model IE if you create a UserModel class you can then create a User class in the Modules that extends the UserModel and runs functions from it with out modifying the table for every use after runing the parrent constructor.
 
 ### Properties
 
