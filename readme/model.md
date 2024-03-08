@@ -160,7 +160,11 @@ Populate the model's properties with data from a database result.
 
 ```php
   // Create an instance of the Model class
-$model = new Model('users');
+  // pass in params for the table
+$model = new Model('users', [
+  'user_id' => 'AUTO INCREMENT PRIMARY KEY INT',
+  'user_username' => 'VARCHAR(255) UNIQUE'
+]);
 
 // Find all users
 $users = $model->find();
