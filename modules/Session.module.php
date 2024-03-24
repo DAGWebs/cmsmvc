@@ -38,7 +38,7 @@ class Session
      */
     public static function exists($name)
     {
-        return isset($_SESSION[$name]);
+        return !empty($_SESSION[$name]);
     }
 
     /**
