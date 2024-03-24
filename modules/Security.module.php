@@ -10,7 +10,7 @@ class Security
      */
     public static function sanitize($value)
     {
-        return htmlentities($value, ENT_QUOTES, 'UTF-8');
+        return htmlentities(trim($value), ENT_QUOTES, 'UTF-8');
     }
 
     /**
